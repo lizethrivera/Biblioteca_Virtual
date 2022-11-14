@@ -1,0 +1,605 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+body{
+    font-family: "Poppins", 'sans-serif';
+}
+
+a, a:hover {
+    text-decoration: none;
+    /* pointer-events: none; */
+}
+
+/* CSS NavBar*/
+#navBar {
+    height: 63px!important;
+    /* border-bottom: 1px solid #E0E0E0; */
+}
+
+#btnMenu {
+    background-color: #E02443;
+    border: 0;
+    border-radius: 45px;
+    color: #fff;
+    padding: 10px;
+    width: 41px;
+    height: 41px;
+    cursor: pointer;
+    position: relative;
+    transition: all 350ms ease;
+}
+
+#tituloClassroom {
+    color: #000000;
+    font-size: 1.38125rem;
+    /* font-family: Regular; */
+    font-weight: 100;
+}
+
+#logoGoogle {
+    height: 24px;
+    width: 74px;
+}
+
+#profilePicMenu{
+    margin-left: 20px;
+}
+
+#leftBar {
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#leftBar i{
+    font-size: 26px;
+    cursor: pointer;
+}
+
+#rightBar {
+    margin-left: auto;
+    margin-right: 30px;
+    display: inline-flex;
+}
+
+#rightBar span{
+    padding: 12px;
+}
+
+/* Img Instructor */
+#imgInstructor{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.rightBarIcons{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightBarIcons:hover{
+    background-color: #F5F5F5;
+    cursor: pointer;
+}
+
+.plusBar {
+    margin-right: 5px;
+    color: #717479;
+}
+
+.logoClass {
+    margin-left: 40px!important;
+    display: inline-block;
+}
+
+.rightBarIcons span i, .rightBarIcons span a i{
+    height: 16px;
+    width: 16px;
+}
+
+#imgInstructor:hover{
+    background-color: #F5F5F5;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+/* Dots Menu */
+#rightBar span .rightBarIconsD{
+    height: 16px;
+    width: 16px;
+}
+
+
+/* Side NavBar Styles */
+#mySidenav {
+    display: none; 
+    padding-top: 6px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 304px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    transition: 10s;
+    padding-top: 60px;
+    box-shadow: 4px 4px 10px #eaebeb;
+    border-right: 2px solid #DCDDDD;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 15px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #FFFFFF;
+    display: block;
+    transition: 0.3s;
+    /* font-family: Regular; */
+}
+
+.menuArribaClases{
+    color: white;
+}
+
+.todasClases {
+    display: flex;
+    height: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    background-color: #E02443;
+    align-items: center;
+    border-radius: 0 2rem 2rem 0;
+    width: 98%;
+
+}
+
+.sideMenu {
+    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+}
+
+.todasClases span{
+    padding-left: 24px;
+    /* font-family: 'Bold'; */
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.todasClases:hover{
+    cursor: pointer;
+}
+
+.todasClasesAba span{
+    letter-spacing: .01785714em;
+    /* font-family: 'Google Sans',Roboto,Arial,sans-serif; */
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+}
+
+.todasClasesAba {
+    display: flex;
+    height: 3.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+    align-items: center;
+    border-radius: 0 2rem 2rem 0;
+    width: 98%;
+}
+
+.todasClasesAba:hover{
+    background-color: #E0E0E0;
+    cursor: pointer;
+}
+
+/* Dropdown Instructores */
+.dropdown-menu {
+    padding: 0!important;
+    top: 45px!important;
+}
+
+.infoInstructor {
+    padding-left: 25px;
+    padding-top: 12px;
+}
+
+.instructor {
+    padding: 0px 10px;
+}
+
+.infoInstructor{
+    color: #3c4043;
+}
+
+#addUser:hover {
+    background-color: white;
+    color: #3c4043;
+}
+/* Info Clases Tarjetas */
+.cuerpo{
+	padding: 20px;
+    display: grid;
+    /* grid-gap: 30px 30px; */
+    text-overflow: ellipsis;
+    justify-content: space-around;
+    grid-template-columns: repeat(4,auto);
+    margin-top: 50px;
+    margin-left: 70px;
+}
+
+.a_CerrarSesion:link, .a_CerrarSesion:hover, .a_CerrarSesion:visited, .a_CerrarSesion:active
+.config_Perfil:link, .config_Perfil:hover, .config_Perfil:visited, .config_Perfil:active {
+    text-decoration:none;
+    color: #3c4043;
+}
+
+.a_CerrarSesion, .config_Perfil{
+    color: #3c4043;
+    text-decoration: none;
+    display: flex;
+    padding-left: 3px;
+}
+
+.tarjeta{
+	width: 300px;
+	height: auto;
+	background: white;
+	border-radius: 10px;
+	border-width: 1px;
+	border:1px solid #ccc;
+    margin-bottom: 25px;
+}
+
+.tarjeta:hover{
+    -webkit-box-shadow: 3px 3px 6px #D8D8D8;
+    -moz-box-shadow: 3px 3px 6px #D8D8D8;
+}
+
+.cabecera{
+    width: 300px;
+    height: 110px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+    border-bottom:1px solid #ccc; 
+    cursor: pointer;  
+
+}
+
+.cabecera .parte1{
+	margin: 0 -0.25rem;
+    padding: 0 0.25rem;
+    text-align: left;
+    position: relative;
+}
+
+.titulo{
+    width: 100%;
+    /* font-family: Bold; */
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    color: #000000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+    padding-left:  12px ;
+    text-transform: uppercase;
+}
+
+.nombre{
+	width: 210px;
+    /* font-family: Roboto,Helvetica,Arial,sans-serif; */
+	font-size: 13px;
+	color: #000000;
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
+	padding-left:12px ;
+}
+
+
+.medio{
+    width: 300px;
+    height: auto; 
+    padding: 20px 5px;
+    /* border-bottom:1px solid #ccc; */
+}
+
+.puntosIcon {
+    position: absolute;
+    top: 0px;
+    right: -17rem;
+}
+
+.texto{
+	padding: 12px 16px 16px ;
+}
+
+.medio .texto .foto{
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+    float: right;
+    height: 4.6875rem;
+    position: relative;
+    margin-top: -3.09375rem;
+    width: 4.6875rem;
+}
+
+.medio .texto h2{
+	margin-top: 0px;
+	font-size: 13px;
+	color:#566573 ;
+	/* font-family: Roboto,Helvetica,Arial,sans-serif; */
+}
+
+.pie{
+    width: 300px;
+    height: 57px; 
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+}
+.pie .icon1{
+	border-radius: 50%;
+    float: right;
+    width: 40px;
+    height: 40px;   
+    margin-top: 1.09375rem;       
+}
+
+.pie .icon2{
+	border-radius: 50%;    
+    float: right;
+    width: 40px;
+    height: 40px;   
+    margin-top: 1.09375rem;        
+}
+
+
+/* Estilos de Tarjetas */
+.card-class{
+    display: flex;
+    background-color: red;
+}
+
+.header-card{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Media para hacer responsive */
+@media only screen and (max-width : 1350px){
+    .cuerpo{
+        grid-template-columns: repeat(3, auto);
+    }
+}
+
+@media only screen and (max-width : 1000px){
+    .cuerpo{
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media only screen and (max-width : 670px){
+    .cuerpo{
+        grid-template-columns: repeat(1, auto);
+    }
+}
+
+
+/* Modal */
+#modalNuevaClase {
+    /* font-family: 'Bold'; */
+    font-size: 16px;
+    margin: 20px 0px 0px 20px;
+}
+
+.marginForm {
+    margin: 15px 0px;
+}
+
+.modalBody {
+    /* font-family: 'Roboto',Helvetica,Arial,sans-serif; */
+}
+
+.modal-footer {
+    /* font-family: Bold; */
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25px;
+    line-height: 36px;
+}
+
+.modal-footer:hover {
+    background-color: none!important;
+}
+
+.formInput input {
+    background: none;
+    border:none;
+    outline: 0px;
+    border-bottom: 1px solid gray;
+}
+
+.inputFocus:focus {
+    outline: none!important;
+    border: 0;
+}
+
+
+/* Flecha */
+.pFlecha img{
+    height: 4.375rem;
+    position: relative;
+    left: 1.9375rem;
+    margin-left: 80%;
+}
+
+.pFlecha {
+    position: absolute;
+    right: 4.4rem;
+    top: 4.4rem;
+    margin-left: 83%;
+    width: 300px;   
+}
+
+.pTexto {
+    letter-spacing: .01785714em;
+    /* font-family: 'Google Sans',Roboto,Arial,sans-serif; */
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #3c4043;
+    margin-left: 25%;
+    padding-left: 30%;
+}
+
+.booksTitles{
+    margin-top: 20px;
+    margin-left: 130px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.booksTitles i{
+    font-size: 30px;
+    color: white;
+}
+
+.booksTitles .bookIcon{
+    background: #4D5BF9;
+}
+
+.iconBook{
+    background: #4D5BF9;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 15px;
+}
+
+
+.search_box .input{
+	border: 0;
+	outline: none;
+	color: black;
+}
+
+.search_wrap{
+	width: 450px;
+	margin: 38px auto;
+}
+
+/* .search_wrap .search_box{
+	position: relative;
+	width: 500px;
+	height: 60px;
+} */
+
+.search_wrap .search_box .input{
+	/* position: absolute; */
+	/* top: 0;
+	left: 0; */
+	width: 100%;
+	height: 100%;
+	/* padding: 10px 20px; */
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #6C63FF;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.search_wrap .search_box .btn:hover{
+	background: #847fec;	
+}
+
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+
+.search_wrap.search_wrap_3 .search_box .input{
+	padding-right: 80px;
+}
+
+.search_wrap.search_wrap_3 .search_box .input,
+.search_wrap.search_wrap_4 .search_box .input,
+.search_wrap.search_wrap_6 .search_box .input{
+	border-radius: 50px;
+}
+
+.search_wrap.search_wrap_3 .search_box .btn{
+	right: 8.5%;
+	border-radius: 50%;
+    margin-top: -4px;
+    color: white;
+    font-style: italic;
+    font-weight: 500;
+}
+/* 
+#search_icon{
+    position: absolute;
+    display: block;
+    bottom: .5rem;
+    right: 1rem;
+    
+    user-select: none;
+    cursor: pointer;
+} */
+
+.bookDetails .booksTitles{
+    margin-left: 0px!important;
+}
+
+.bookDetails .agg_libro{
+    margin-left: auto;
+}
+
+.agg_libro .btn{
+    width: 150px;
+    background-color: #6C63FF;
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 134px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+
+}
+
+.agg_libro .btn:hover {
+    background-color: #847fec;
+}
+

@@ -1,0 +1,103 @@
+body.active .form-aggLibro, body.active .booksTitles{
+    margin-left: 350px;
+    width: auto;
+}
+
+.agregar_libro{
+    width: auto;
+    background-color: #6C63FF;
+    border: none;
+    outline: none;
+    height: 35px;
+    border-radius: 134px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.agregar_libro:hover{
+    color: white;
+    background: #847fec;
+}
+
+input:focus{
+    /* border: 0; */
+    outline: none;
+    /* border-color: none!important;
+    box-shadow: none!important; */
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #847fec!important;
+    outline: 0;
+    box-shadow: none!important;
+}
+
+.btn_agregar{
+    text-align: center;
+}
+
+.img_Portada{
+    height: 400px;
+    width: 350px;
+    object-fit: contain;
+}
+
+.portada_Libro{
+    text-align: center;
+}
+
+.subir_imgPortada{
+    font-size: 16px;
+    background: white;
+    border-radius: 50px;
+    /* box-shadow: 5px 5px 10px black; */
+    width: 350px;
+    outline: none;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button{
+    color: white;
+    background: #6C63FF;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 1px 0 1px 1px #6C63FF;
+    outline: none;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button:hover{
+    background: #847fec;
+    box-shadow: 1px 0 1px 1px #847fec;
+}
+
+.bookEdit{
+    margin-left: 200px;
+}
+
+body.active .bookEdit{
+    width: auto;
+    margin-left: 250px;
+
+}
+
+span{
+    text-transform: capitalize;
+}
+
+.p_Info{
+    font-weight: 500;
+    color: #3c4043;
+}
+
+.span_Info {
+    font-weight: 500;
+    color: black;
+}
