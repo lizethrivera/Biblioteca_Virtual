@@ -138,28 +138,28 @@
                 <div class="col-md-6 img_Usuario">
                     <img class="img_usuarioF mb-3" <?php if($_SESSION['img_Perfil'] == NULL){ echo 'src="img/images/default_user.png"';}else{ echo 'src="data:'.$_SESSION["tipo_imagen"].';base64,'.base64_encode($_SESSION["img_Perfil"]).'"';}?> alt="" srcset="">
                     <!-- <img class="img_usuarioF mb-3" src="img/images/goku.jpg" alt="" srcset=""> -->
-                    <input type="file" class="form-control" id="archivo_img" name="archivo_img" placeholder="Example input placeholder">
+                    <input type="file" class="subir_imgPortada" id="archivo_img" name="archivo_img" placeholder="Example input placeholder">
                 </div>
                 
 
                 <div class="col-md-6 mb-3 mt-3">
                     <div class="info_Usuario">
                         <div class="col-12">
-                            <p>Nombre Completo: <span><?php echo $_SESSION['nombreCompleto']?></span></p>
+                            <p class="p_Info">Nombre Completo: <span class="usuario_SPAN span_Info"><?php echo $_SESSION['nombreCompleto']?></span></p>
                         </div>
     
                         <div class="col-12">
-                            <p>Usuario: <span><?php echo $_SESSION['usuario']?></span></p>
+                            <p class="p_Info">Usuario: <span  class="span_Info"><?php echo $_SESSION['usuario']?></span></p>
                         </div>
     
                         <div class="col-12">
-                            <p>Correo Electronico: <span><?php echo $_SESSION['correo']?></span></p>
+                            <p class="p_Info">Correo Electronico: <span  class="span_Info"><?php echo $_SESSION['correo']?></span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-6 img_Usuario">
-                    <input name="actualizar" type="submit" class="btn" value="Actualizar Perfil" />
+                    <input name="actualizar" type="submit" class="btn mt-4" value="Actualizar Perfil" />
                 </div>
                 
             </div>

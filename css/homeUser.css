@@ -72,3 +72,43 @@ body.active .form-Actualizar, body.active .userTitle{
 .info_Usuario{
     margin-top: 10%;
 }
+
+span .usuario_SPAN{
+    text-transform: capitalize;
+}
+
+.subir_imgPortada{
+    font-size: 16px;
+    background: white;
+    border-radius: 50px;
+    /* box-shadow: 5px 5px 10px black; */
+    width: 350px;
+    outline: none;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button{
+    color: white;
+    background: #6C63FF;
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 1px 0 1px 1px #6C63FF;
+    outline: none;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button:hover{
+    background: #847fec;
+    box-shadow: 1px 0 1px 1px #847fec;
+}
+
+.p_Info{
+    font-weight: 500;
+    color: #3c4043;
+}
+
+.span_Info {
+    font-weight: 500;
+    color: black;
+}
