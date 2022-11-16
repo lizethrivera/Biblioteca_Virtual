@@ -96,15 +96,15 @@
                         </div>
                         <div class="instructor row" style="display: flex;">
                             <span class="dropdown-item infoInstructor"style ="display:flex; margin: 5px 0px 0px 13px;" id = "addUser">
-                                <a class="config_Perfil" href="homeUser.php">
+                                <a class="config_Perfil animacion" href="homeUser.php">
                                     <i class="fas fa-gear"></i>
-                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px;"> Configuracion</h5>
+                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px;" class="dropMenuOption"> Configuracion</h5>
                                 </a>
                             </span>
                             <span class="dropdown-item infoInstructor"style ="display:flex; margin: 5px 0px 0px 13px;" id = "addUser">
-                                <a class="a_CerrarSesion" href="backend/cerrar_sesion.php">
+                                <a class="a_CerrarSesion animacion" href="backend/cerrar_sesion.php">
                                     <i class="fas fa-right-from-bracket"></i>
-                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px; margin-top: -1px;"> Cerrar Sesion</h5>
+                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px; margin-top: -1px;" class="dropMenuOption"> Cerrar Sesion</h5>
                                 </a>    
                             </span>
                         </div>
@@ -162,54 +162,78 @@
             <div class="row">
                 <div class="col-4 mb-3 mt-3">
                     <label for="titulo" class="form-label">Titulo</label>
-                    <input type="text" class="form-control" name="titulo">
+                    <input type="text" required class="form-control" name="titulo">
                 </div>
     
                 <div class="col-4 mb-3 mt-3">
                     <label for="autor" class="form-label">Autor</label>
-                    <input type="text" class="form-control" name="autor">
+                    <input type="text" required class="form-control" name="autor">
                 </div>
 
                 <div class="col-4 mb-3 mt-3">
                     <label for="editorial" class="form-label">Editorial</label>
-                    <input type="text" class="form-control" name="editorial">
+                    <input type="text" required class="form-control" name="editorial">
                 </div>
 
                 <div class="col-4 mb-3 mt-3">
                     <label for="edicion" class="form-label">Edicion</label>
-                    <input type="text" class="form-control" name="edicion">
+                    <input type="text" required class="form-control" name="edicion">
                 </div>
 
 
                 <div class="col-4 mb-3 mt-3">
                     <label for="isbn" class="form-label">ISBN</label>
-                    <input type="text" class="form-control" name="isbn">
+                    <input type="text" required class="form-control" name="isbn">
                 </div>
 
                 <div class="col-4 mb-3 mt-3">
                     <label for="pais" class="form-label">Pais</label>
-                    <input type="text" class="form-control" name="pais">
+                    <input type="text" required class="form-control" name="pais">
                 </div>
 
                 <div class="col-2 mb-3 mt-3">
                     <label for="fecha" class="form-label">Fecha</label>
-                    <input type="text" class="form-control" name="fecha">
+                    <input type="text" required class="form-control" name="fecha">
                 </div>
 
                 <div class="col-2 mb-3 mt-3">
                     <label for="no_paginas" class="form-label">No. de Paginas</label>
-                    <input type="number" class="form-control" name="no_paginas">
+                    <input type="number" required class="form-control" name="no_paginas">
                 </div>
 
                 <div class="col-4 mb-3 mt-3">
                     <label for="portada" class="form-label">Imagen Portada</label>
-                    <input type="file" class="subir_imgPortada" name="portada">
+                    <input type="file" required class="subir_imgPortada" name="portada">
                 </div>
 
                 <div class="col-4 mb-3 mt-3">
                     <label for="archivo" class="form-label">Adjuntar Archivo PDF</label>
-                    <input type="file" class="subir_imgPortada" name="archivo">
+                    <input type="file" required class="subir_imgPortada" name="archivo">
                 </div>
+
+                <?php
+                    if($_GET['clase'] == 0){
+                ?>
+                    <div class="col-4 mb-3 mt-3">
+                        <label for="clase" class="form-label">Seleccione Clase</label>
+                        <select class="form-select form-select-sm select" name="clase">
+                    <?php
+                        require('backend/config.php');
+                        require('backend/clases.php');
+
+                        $resultado = mysqli_query($conn, $clases);
+                        while ($row = mysqli_fetch_array($resultado)) {
+                    ?>
+                            <option value=<?php echo $row['iD']?>><?php echo $row['nombreClase']?></option>
+                    <?php
+                        }
+                    ?>
+                        </select>
+                    </div>
+                <?php
+                    }
+                ?>
+                
 
                 
             </div>

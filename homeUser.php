@@ -97,15 +97,15 @@
                         </div>
                         <div class="instructor row" style="display: flex;">
                             <span class="dropdown-item infoInstructor"style ="display:flex; margin: 5px 0px 0px 13px;" id = "addUser">
-                                <a class="config_Perfil" href="homeUser.php">
+                                <a class="config_Perfil animacion" href="homeUser.php">
                                     <i class="fas fa-gear"></i>
-                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px;"> Configuracion</h5>
+                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px;" class="dropMenuOption"> Configuracion</h5>
                                 </a>
                             </span>
                             <span class="dropdown-item infoInstructor"style ="display:flex; margin: 5px 0px 0px 13px;" id = "addUser">
-                                <a class="a_CerrarSesion" href="backend/cerrar_sesion.php">
+                                <a class="a_CerrarSesion animacion" href="backend/cerrar_sesion.php">
                                     <i class="fas fa-right-from-bracket"></i>
-                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px; margin-top: -1px;"> Cerrar Sesion</h5>
+                                    <h5 style="margin-bottom: 0px; font-size: 15px; margin-left: 18px; margin-top: -1px;" class="dropMenuOption"> Cerrar Sesion</h5>
                                 </a>    
                             </span>
                         </div>

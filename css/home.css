@@ -604,3 +604,10 @@ a, a:hover {
     background-color: #847fec;
 }
 
+.animacion h5{
+    transition: transform .3s;
+}
+
+.dropMenuOption:hover{
+    transform: translateX(5px);
+}

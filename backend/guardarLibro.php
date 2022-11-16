@@ -32,17 +32,20 @@
             $tam_ArchivoPDF = $_FILES['archivo']['size'];
             $tipo_ArchivoPDF = $_FILES['archivo']['type'];
 
-            $insert = "INSERT INTO `libros`(`titulo`, `autor`, `pais`, `ISBN`, `anio`, `edicion`, `editorial`, `tam_ArchivoPDF`, `nombre_ArchivoPDF`, `archivo_pdf`, `tipo_ArchivoPDF`, `imagen_portada`, `tam_imgPortada`, `nombre_imgPortada`, `tipo_imgPortada`, `id_clase`, `no_paginas`) VALUES ('$titulo','$autor','$pais','$isbn','$fecha','$edicion','$editorial','$tam_ArchivoPDF','$nombre_ArchivoPDF','$archivo_pdf','$tipo_ArchivoPDF','$imagen_portada','$tam_imgPortada','$nombre_imgPortada','$tipo_imgPortada','$_GET[clase]','$no_paginas')";
-
             $clase_iD = $_GET['clase'];
 
-            mysqli_query($conn, $insert);
-            
-            session_start();
-            $_SESSION['img_Perfil'] = $row['img_Perfil'];
-            $_SESSION['tipo_imagen'] = $row['tipo_imagen'];
+            if($clase_iD == 0){
+                $clase_insertar = $_POST['clase'];
+            }else{
+                $clase_insertar = $clase_iD;
+            }
 
-            header("Location: ../homeBooks.php?clase=$clase_iD");
+            $insert = "INSERT INTO `libros`(`titulo`, `autor`, `pais`, `ISBN`, `anio`, `edicion`, `editorial`, `tam_ArchivoPDF`, `nombre_ArchivoPDF`, `archivo_pdf`, `tipo_ArchivoPDF`, `imagen_portada`, `tam_imgPortada`, `nombre_imgPortada`, `tipo_imgPortada`, `id_clase`, `no_paginas`) VALUES ('$titulo','$autor','$pais','$isbn','$fecha','$edicion','$editorial','$tam_ArchivoPDF','$nombre_ArchivoPDF','$archivo_pdf','$tipo_ArchivoPDF','$imagen_portada','$tam_imgPortada','$nombre_imgPortada','$tipo_imgPortada','$clase_insertar','$no_paginas')";
+            
+
+            mysqli_query($conn, $insert);
+
+            header("Location: ../homeBooks.php?clase=$clase_insertar");
 
         }
     }
