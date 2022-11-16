@@ -90,3 +90,8 @@ a, a:hover {
 .libros_Gallery{
     margin-left: 160px;
 }
+
+.btn{
+    width: auto;
+    font-size: 15px;
+}

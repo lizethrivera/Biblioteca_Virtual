@@ -8,9 +8,12 @@
     $consulta = "SELECT * FROM clases WHERE iD = '$clase_iD'";
     $librosClase = mysqli_query($conn, $consulta);
 
-    while($row = mysqli_fetch_array($librosClase)){
-        $nombreClase = $row['nombreClase'];
-        
+    if($clase_iD == 0){
+        $nombreClase = 'Todos';
+    }else{
+        while($row = mysqli_fetch_array($librosClase)){
+            $nombreClase = $row['nombreClase'];
+        }
     }
 ?>
 
@@ -62,16 +65,44 @@
                 </div> -->
                 
                 <div class="rightBarIcons dropdown" id="profilePicMenu">
-                    <span data-toggle="dropdown" aria-expanded="false" id="profilePic"><img id="imgInstructor" <?php
-                        if($_SESSION['img_Perfil'] == NULL){ echo 'src="img/images/default_user.png"';}else{
-                            echo 'src="data:'.$_SESSION["tipo_imagen"].';base64,'.base64_encode($_SESSION["img_Perfil"]).'"';}?>
+                    <span data-toggle="dropdown" aria-expanded="false" id="profilePic"><img id="imgInstructor"
+                        <?php 
+                            require('backend/config.php');
+
+                            $usuario_IMG = "SELECT * FROM usuarios WHERE iD = '$_SESSION[iD]'";
+            
+                            if($resultado = $conn->query($usuario_IMG)){
+                                while($row = $resultado->fetch_array()){
+                                    if($row['img_Perfil'] == NULL){ 
+                                        echo 'src="img/images/default_user.png"';
+                                    }else{ 
+                                        echo 'src="data:'.$row["tipo_imagen"].';base64,'.base64_encode($row["img_Perfil"]).'"';
+                                    }
+                                }
+                            }
+                            
+                        ?> 
                         alt="" srcset=""></span>
                     <!-- DropDownMenu -->
                     <div class="dropdown-menu dropdown-menu-right" style="width: 300px; border-radius: 3%;" aria-labelledby="imgInstructor" id="dropMenu">
                         <div class="instructor row" style="display: flex;">
-                            <span class="dropdown-item infoInstructor col-1"><img id="imgInstructor" <?php
-                        if($_SESSION['img_Perfil'] == NULL){ echo 'src="img/images/default_user.png"';}else{
-                            echo 'src="data:'.$_SESSION["tipo_imagen"].';base64,'.base64_encode($_SESSION["img_Perfil"]).'"';}?>
+                            <span class="dropdown-item infoInstructor col-1"><img id="imgInstructor"
+                            <?php 
+                                require('backend/config.php');
+
+                                $usuario_IMG = "SELECT * FROM usuarios WHERE iD = '$_SESSION[iD]'";
+                
+                                if($resultado = $conn->query($usuario_IMG)){
+                                    while($row = $resultado->fetch_array()){
+                                        if($row['img_Perfil'] == NULL){ 
+                                            echo 'src="img/images/default_user.png"';
+                                        }else{ 
+                                            echo 'src="data:'.$row["tipo_imagen"].';base64,'.base64_encode($row["img_Perfil"]).'"';
+                                        }
+                                    }
+                                }
+                                
+                            ?> 
                         alt="" srcset=""></span>
                             <div class="infoInstructor col-11">
                                 <h5 style="margin-left: 10px; margin-bottom: 0px; font-size: 15px;"><?php echo $_SESSION['nombreCompleto']?></h5>
@@ -151,7 +182,8 @@
             <?php
                 if($_SESSION['rol'] == 'admin'){
                     echo '<div class="agg_libro">';
-                        echo '<a href="homeAdmin.php?clase='.$clase_iD.'" class="btn">Agregar Libro</a>';
+                        echo '<a href="homeAdmin.php?clase='.$clase_iD.'" class="btn mx-3">Agregar Libro</a>';
+                        echo '<a href="homeBooks.php?clase=0" class="btn">Ver Libros</a>';
                     echo '</div>';
                 }
             ?>
@@ -175,7 +207,7 @@
     </div> -->
 
     <!-- Libros -->
-    <div class="container libros_Gallery mt-4">
+    <div class="container libros_Gallery mt-4 mb-5">
         <div class="row">
 
         <?php
@@ -183,8 +215,8 @@
             require('backend/libros.php');
 
             $resultado = mysqli_query($conn, $libros);
-            while($row = mysqli_fetch_array($resultado)){
-                if($row['id_clase'] == $clase_iD){
+            while ($row = mysqli_fetch_array($resultado)) {
+                if ($clase_iD == '0') {
         ?>
             <div class="col-3 col-md-3 mt-4">
                 <div class="card">
@@ -195,7 +227,7 @@
                         </a>
                         <div class="links card-info">
                             <?php
-                                if($_SESSION['rol'] == 'admin'){
+                                if ($_SESSION['rol'] == 'admin') {
                                     echo '<a href="bookEdit.php?libro='.$row['iD'].'" class="icon2 mx-3"><i class="fa-solid fa-pen"></i></a>';
                                 }
                             ?>
@@ -205,39 +237,30 @@
                     </div>
                 </div>
             </div>
-        <?php }
-            } ?>
-            </div>
-    </div>
+        <?php } elseif ($row['id_clase'] == $clase_iD) {
+        ?>
+            <div class="col-3 col-md-3 mt-4">
+                <div class="card">
+                    <img class="card-img-top" <?php echo 'src="data:'.$row["tipo_imgPortada"].';base64,'.base64_encode($row["imagen_portada"]).'"'?> alt="Card image cap">
 
-    
-
-    
-
-    <!-- Modal -->
-    <div class="modal fade" id="modalAddClass" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <h5 class="modal-title" id="modalNuevaClase">Crear Clase</h5>
-                <div class="modal-body modalBody">
-                    <form class="row formInput">
-                        <div class="col-12">
-                        <input type="text" class="form-control marginForm inputFocus" id="nombreClase" placeholder="Nombre de la Clase (Obligatorio)">
-                        <input type="text" class="form-control marginForm" id="seccion" placeholder="Sección">
-                        <input type="text"class="form-control marginForm" id="codigo" placeholder="Código">
-						<input type="text"class="form-control marginForm" id="descripcion" placeholder="Descripción">
-                        <input type="text"class="form-control marginForm" id="aula" placeholder="Aula">
+                    <div class="card-body">
+                        <a class="parte1 card-title" href="bookDetails.php?libro=<?php echo $row['iD'] ?>"><?php echo $row['titulo']?>
+                        </a>
+                        <div class="links card-info">
+                            <?php
+                                if ($_SESSION['rol'] == 'admin') {
+                                    echo '<a href="bookEdit.php?libro='.$row['iD'].'" class="icon2 mx-3"><i class="fa-solid fa-pen"></i></a>';
+                                }
+                            ?>
+                            <a href="backend/verPDF.php?libro=<?php echo $row['iD'] ?>" target="_blank" class="card-info mx-3"><i class="fa-solid fa-eye"></i></a>
+                            <a href="bookDetails.php?libro=<?php echo $row['iD'] ?>" class="card-info mx-3"><i class="fa-solid fa-circle-info"></i></a>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-light" style="
-                    color: #717479;" data-dismiss="modal" onclick="vaciarCampos()">Cancelar</button>
-                    <button type="button" id="btn-guardar" class="btn btn-outline-light" style="
-                    color: #717479;" onclick="crearClase()">Crear</button>
+                    </div>
                 </div>
             </div>
-    </div>
+            <?php }
+        }   ?>
+        </div>
     </div>
 
     <!-- Scripts -->

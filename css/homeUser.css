@@ -112,3 +112,7 @@ span .usuario_SPAN{
     font-weight: 500;
     color: black;
 }
+
+#imgInstructor{
+    object-fit: contain;
+}

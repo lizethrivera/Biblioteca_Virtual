@@ -51,16 +51,44 @@
                 </div> -->
                 
                 <div class="rightBarIcons dropdown" id="profilePicMenu">
-                    <span data-toggle="dropdown" aria-expanded="false" id="profilePic"><img id="imgInstructor" <?php
-                        if($_SESSION['img_Perfil'] == NULL){ echo 'src="img/images/default_user.png"';}else{
-                            echo 'src="data:'.$_SESSION["tipo_imagen"].';base64,'.base64_encode($_SESSION["img_Perfil"]).'"';}?>
+                    <span data-toggle="dropdown" aria-expanded="false" id="profilePic"><img id="imgInstructor"
+                        <?php 
+                            require('backend/config.php');
+
+                            $usuario_IMG = "SELECT * FROM usuarios WHERE iD = '$_SESSION[iD]'";
+            
+                            if($resultado = $conn->query($usuario_IMG)){
+                                while($row = $resultado->fetch_array()){
+                                    if($row['img_Perfil'] == NULL){ 
+                                        echo 'src="img/images/default_user.png"';
+                                    }else{ 
+                                        echo 'src="data:'.$row["tipo_imagen"].';base64,'.base64_encode($row["img_Perfil"]).'"';
+                                    }
+                                }
+                            }
+                            
+                        ?> 
                         alt="" srcset=""></span>
                     <!-- DropDownMenu -->
                     <div class="dropdown-menu dropdown-menu-right" style="width: 300px; border-radius: 3%;" aria-labelledby="imgInstructor" id="dropMenu">
                         <div class="instructor row" style="display: flex;">
-                            <span class="dropdown-item infoInstructor col-1"><img id="imgInstructor" <?php
-                        if($_SESSION['img_Perfil'] == NULL){ echo 'src="img/images/default_user.png"';}else{
-                            echo 'src="data:'.$_SESSION["tipo_imagen"].';base64,'.base64_encode($_SESSION["img_Perfil"]).'"';}?>
+                            <span class="dropdown-item infoInstructor col-1"><img id="imgInstructor"
+                            <?php 
+                                require('backend/config.php');
+
+                                $usuario_IMG = "SELECT * FROM usuarios WHERE iD = '$_SESSION[iD]'";
+                
+                                if($resultado = $conn->query($usuario_IMG)){
+                                    while($row = $resultado->fetch_array()){
+                                        if($row['img_Perfil'] == NULL){ 
+                                            echo 'src="img/images/default_user.png"';
+                                        }else{ 
+                                            echo 'src="data:'.$row["tipo_imagen"].';base64,'.base64_encode($row["img_Perfil"]).'"';
+                                        }
+                                    }
+                                }
+                                
+                            ?> 
                         alt="" srcset=""></span>
                             <div class="infoInstructor col-11">
                                 <h5 style="margin-left: 10px; margin-bottom: 0px; font-size: 15px;"><?php echo $_SESSION['nombreCompleto']?></h5>

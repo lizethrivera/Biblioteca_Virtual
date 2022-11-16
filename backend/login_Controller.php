@@ -24,7 +24,7 @@
                         $_SESSION['img_Perfil'] = $row['img_Perfil'];
                         $_SESSION['tipo_imagen'] = $row['tipo_imagen'];
                         $_SESSION['rol'] = $row['rol'];
-                        header("Location: home.php");
+                        header("Location: homeBooks.php?clase=1");
                     }elseif($row['rol'] == 'usuario'){
                         session_start();
                         $_SESSION['iD'] = $row['iD'];

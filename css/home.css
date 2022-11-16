@@ -499,7 +499,6 @@ a, a:hover {
 .search_box .input{
 	border: 0;
 	outline: none;
-	color: black;
 }
 
 .search_wrap{
@@ -521,7 +520,8 @@ a, a:hover {
 	height: 100%;
 	/* padding: 10px 20px; */
 	border-radius: 3px;
-	font-size: 18px;
+	font-size: 14px;
+    color: #3c4043;
 }
 
 .search_wrap .search_box .btn{
@@ -584,11 +584,11 @@ a, a:hover {
 }
 
 .agg_libro .btn{
-    width: 150px;
+    width: auto;
     background-color: #6C63FF;
     border: none;
     outline: none;
-    height: 35px;
+    height: 32px;
     border-radius: 134px;
     color: #fff;
     text-transform: uppercase;
@@ -596,6 +596,7 @@ a, a:hover {
     margin: 10px 0;
     cursor: pointer;
     transition: 0.5s;
+    font-size: 15px;
 
 }
 

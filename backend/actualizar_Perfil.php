@@ -17,6 +17,6 @@
 
         $resultado = mysqli_query($conn, $update);
 
-        header("Location: cerrar_sesion.php");
+        header("Location: ../homeUser.php");
     }
 ?>

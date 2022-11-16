@@ -37,6 +37,11 @@
             $clase_iD = $_GET['clase'];
 
             mysqli_query($conn, $insert);
+            
+            session_start();
+            $_SESSION['img_Perfil'] = $row['img_Perfil'];
+            $_SESSION['tipo_imagen'] = $row['tipo_imagen'];
+
             header("Location: ../homeBooks.php?clase=$clase_iD");
 
         }
