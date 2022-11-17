@@ -196,7 +196,7 @@
                                                     echo '<a href="bookEdit.php?libro='.$row['iD'].'" class="icon2 mx-3"><i class="fa-solid fa-pen"></i></a>';
                                                 }
                                             ?>
-                                            <a href="bookDetails.php?libro=<?php echo $row['iD'] ?>" class="card-info mx-3"><i class="fa-solid fa-eye"></i></a>
+                                            <a href="backend/verPDF.php?libro=<?php echo $row['iD'] ?>" target="_blank" class="card-info mx-3"><i class="fa-solid fa-eye"></i></a>
                                             <a href="bookDetails.php?libro=<?php echo $row['iD'] ?>" class="card-info mx-3"><i class="fa-solid fa-circle-info"></i></a>
                                         </div>
                                     </div>
