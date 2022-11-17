@@ -67,6 +67,7 @@
 
 body.active .libros_Gallery, body.active .bookDetails{
     margin-left: 350px;
+    margin-right: 15px;
     width: auto;
 }
 
@@ -75,7 +76,7 @@ body.active .card-Book{
 }
 
 .card-img, .card-img-bottom, .card-img-top{
-    height: 330px!important;
+    /* height: 330px!important; */
 }
 
 .card-Book{
