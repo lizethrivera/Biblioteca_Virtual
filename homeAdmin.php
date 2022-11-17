@@ -192,7 +192,7 @@
                 </div>
 
                 <div class="col-2 mb-3 mt-3">
-                    <label for="fecha" class="form-label">Fecha</label>
+                    <label for="fecha" class="form-label">Año de Publicacion</label>
                     <input type="text" required class="form-control" name="fecha">
                 </div>
 
